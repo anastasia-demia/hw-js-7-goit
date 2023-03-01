@@ -7,6 +7,7 @@ const galleryContainer = document.querySelector(".gallery");
 const itemsMarkup = createGalleryItems(galleryItems);
 
 galleryContainer.insertAdjacentHTML('afterbegin', itemsMarkup)
+galleryContainer.addEventListener("click", onImageClick)
 
 function createGalleryItems (galleryItems) {
     return galleryItems.map(({preview, original, description}) => {
@@ -26,8 +27,6 @@ function createGalleryItems (galleryItems) {
 
 function onImageClick(event) {
     event.preventDefault()
-
-    
 }
 
 var lightbox = new SimpleLightbox('.gallery a', {
